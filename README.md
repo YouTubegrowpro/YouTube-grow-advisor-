@@ -1,21 +1,33 @@
- ```html
-<!DOCTYPE html>
+        from { opacity: 0; transform: translateY(20px); }
+      <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="YouTube Vistar Salahkar: AI-powered tools for YouTube creators to optimize SEO, audit channels, generate trending ideas, create scripts, and design thumbnails.">
+    <title>YouTube Vistar Salahkar</title>
+    <meta name="description" content="YouTube Vistar Salahkar: AI-powered tools for YouTube creators to optimize SEO, audit channels, generate trending ideas, create scripts, and design stunning thumbnails.">
     <meta name="keywords" content="YouTube growth, SEO, channel audit, trending ideas, thumbnail maker, AI tools">
     <meta name="google-site-verification" content="IBIxq7l1jTl5OYSP1t3NebJUiZ9_neYoZncfr7xwWxE" />
     <meta property="og:title" content="YouTube Vistar Salahkar - Grow Your YouTube Channel">
     <meta property="og:description" content="Boost your YouTube channel with AI-powered SEO, audits, trending ideas, scripts, and thumbnails.">
-    <meta property="og:image" content="https://yourdomain.com/assets/hero-image.jpg">
+    <!-- Note: Placeholder image URL used below -->
+    <meta property="og:image" content="https://placehold.co/1200x630/000/FFF?text=YouTube+Vistar+Salahkar">
     <meta name="twitter:card" content="summary_large_image">
-    <title>YouTube Vistar Salahkar</title>
-    <link href="/css/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap');
-
+      /* --- Custom Tailwind Colors Defined --- */
+      .bg-yt-dark { background-color: #111111; }
+      .text-yt-light { color: #ffffff; }
+      .bg-yt-med-grey { background-color: #222222; }
+      .border-yt-grey { border-color: #333333; }
+      .bg-yt-red { background-color: #FF0000; }
+      .text-yt-red { color: #FF0000; }
+      .hover\:bg-red-700:hover { background-color: #CC0000; }
+      .border-yt-red\/50 { border-color: rgba(255, 0, 0, 0.5); }
+      
+      /* --- User's Provided CSS --- */
       body {
         background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
         color: #ffffff;
@@ -46,7 +58,7 @@
       .tab-button:hover {
         background: linear-gradient(180deg, #2a2a2a, #1a1a1a);
         color: #FF4444;
-        transform: scale(1.05);
+        transform: scale(1.03); /* Adjusted for better mobile stability */
       }
 
       .loader {
@@ -90,12 +102,14 @@
         border-radius: 8px !important;
         padding: 12px !important;
         transition: all 0.3s ease;
+        width: 100%;
+        box-sizing: border-box;
       }
 
       input[type="text"]:hover, textarea:hover, select:hover {
         border-color: #FF0000 !important;
         box-shadow: 0 0 8px rgba(255, 0, 0, 0.3);
-        transform: scale(1.01);
+        transform: scale(1.005);
       }
 
       .user-id-box {
@@ -106,10 +120,12 @@
         font-size: 0.8rem;
         color: #FFDDDD;
         box-shadow: 0 0 5px rgba(255, 0, 0, 0.2);
+        word-break: break-all;
       }
 
       .hero-section {
-        background: url('https://images.pexels.com/photos/3560363/pexels-photo-3560363.jpeg?auto=compress&cs=tinysrgb&w=1920') no-repeat center center/cover;
+        /* Using a stable placeholder image URL */
+        background: url('https://placehold.co/1920x600/111/FFF?text=YouTube+Vistar+Salahkar+AI') no-repeat center center/cover;
         border-radius: 12px;
         padding: 4rem;
         text-align: center;
@@ -117,7 +133,8 @@
         position: relative;
         overflow: hidden;
       }
-
+      
+      /* Rest of the user's CSS for hero, card, and media queries */
       .hero-section::before {
         content: '';
         position: absolute;
@@ -141,6 +158,450 @@
       @keyframes fadeInUp {
         from { opacity: 0; transform: translateY(20px); }
         to { opacity: 1; transform: translateY(0); }
+      }
+
+      .submit-button {
+        position: relative;
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.4); }
+        70% { box-shadow: 0 0 0 10px rgba(255, 0, 0, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0); }
+      }
+
+      .card {
+        background: #1a1a1a;
+        border-radius: 12px;
+        padding: 2rem;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 20px rgba(255, 0, 0, 0.2);
+      }
+
+      @media (max-width: 640px) {
+        .flex.border-b { flex-direction: column; }
+        .tab-button { width: 100%; font-size: 0.9rem; }
+        .hero-section { padding: 2rem; }
+        .submit-button { padding: 0.75rem; font-size: 0.9rem; }
+      }
+    </style>
+    <!-- Google Analytics (Replace with real ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXXXX');
+    </script>
+</head>
+<body>
+    <div class="min-h-screen flex flex-col">
+      
+      <!-- HEADER -->
+      <header class="bg-yt-dark sticky top-0 z-50 shadow-lg border-b border-yt-red/50">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+          <div class="flex items-center space-x-2">
+            <svg class="youtube-logo w-6 h-6 fill-yt-red" viewBox="0 0 24 24">
+              <path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.79 16.5c-.21.74-.82 1.35-1.56 1.56C14.88 18.5 12 18.5 12 18.5s-2.88 0-4.23-.44c-.74-.21-1.35-.82-1.56-1.56C6 15.12 6 12 6 12s0-3.12.44-4.23c.21-.74.82-1.35 1.56-1.56C9.12 6 12 6 12 6s2.88 0 4.23.44c.74.21 1.35.82 1.56 1.56C18 8.88 18 12 18 12s0 3.12-.44 4.23zM10 14.5v-5l4 2.5z"/>
+            </svg>
+            <span class="text-xl font-extrabold text-yt-light tracking-tight">YouTube Vistar Salahkar</span>
+          </div>
+          <div class="flex items-center space-x-4">
+            <select id="language-select" class="bg-yt-dark text-yt-light rounded-md p-2 border border-yt-grey text-sm focus:ring-yt-red focus:border-yt-red" aria-label="Select Language">
+              <option value="Hindi">🌐 हिंदी</option>
+              <option value="English">🇬🇧 English</option>
+              <option value="Spanish">🇪🇸 Español</option>
+              <option value="French">🇫🇷 Français</option>
+              <option value="Japanese">🇯🇵 日本語</option>
+            </select>
+            <div class="user-id-box">
+              User ID: <span id="user-id">Loading...</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- HERO SECTION -->
+      <section class="hero-section mb-8">
+        <div class="hero-content">
+          <h1 class="text-4xl sm:text-5xl font-bold text-yt-light mb-4">Skyrocket Your YouTube Channel</h1>
+          <p class="text-lg sm:text-xl text-yt-light mb-6">Unleash AI-powered tools for SEO, audits, trending ideas, scripts, and stunning thumbnails!</p>
+          <button class="bg-yt-red text-yt-light font-bold py-3 px-8 rounded-xl hover:bg-red-700 transition duration-300 submit-button" onclick="document.getElementById('video-seo').scrollIntoView()">Start Creating Now</button>
+        </div>
+      </section>
+
+      <main class="flex-grow max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- TAB NAVIGATION -->
+        <div class="flex border-b border-yt-grey overflow-x-auto whitespace-nowrap mb-8">
+          <button class="tab-button px-6 py-3 text-center text-base font-medium transition duration-300 active" data-tab="video-seo" aria-label="Video SEO Tab">🎬 वीडियो SEO</button>
+          <button class="tab-button px-6 py-3 text-center text-base font-medium transition duration-300" data-tab="channel-audit" aria-label="Channel Audit Tab">📈 चैनल समीक्षा</button>
+          <button class="tab-button px-6 py-3 text-center text-base font-medium transition duration-300" data-tab="trending-ideas" aria-label="Trending Ideas Tab">🔥 ट्रेंडिंग विचार</button>
+          <button class="tab-button px-6 py-3 text-center text-base font-medium transition duration-300" data-tab="script-story" aria-label="Script and Story Tab">✍️ स्क्रिप्ट / स्टोरी</button>
+          <button class="tab-button px-6 py-3 text-center text-base font-medium transition duration-300" data-tab="thumbnail-maker" aria-label="Thumbnail Maker Tab">🖼️ थंबनेल मेकर</button>
+        </div>
+
+        <div class="w-full mb-8 mt-4">
+          <div class="card p-4">
+            <p class="text-xs font-semibold text-gray-400 mb-2 uppercase tracking-wider text-center">Advertisement / प्रायोजक</p>
+            <div id="top-banner-ad" class="w-full bg-yt-dark py-4 rounded-lg flex items-center justify-center min-h-[90px] text-gray-600">
+              <!-- Placeholder for AdSense -->
+              Ad Placeholder - 728x90
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB CONTENT CONTAINER -->
+        <div id="tab-content-container">
+          
+          <!-- TAB 1: VIDEO SEO -->
+          <div id="video-seo" class="tab-pane active space-y-6 card">
+            <h2 class="text-3xl font-bold text-yt-red">🎬 वीडियो SEO</h2>
+            <input type="text" id="seo-topic" placeholder="आपके वीडियो का मुख्य विषय क्या है? (जैसे: ब्लॉग्गिंग से पैसे कैसे कमाएं)" class="w-full" aria-label="Video Topic Input">
+            <button onclick="handleVideoOptimization('video-seo-output', 'seo-topic', 'seo-loader-button')" 
+                    id="seo-loader-button"
+                    class="w-full bg-yt-red text-yt-light font-bold py-3 rounded-xl shadow-lg hover:bg-red-700 transition duration-300 flex items-center justify-center relative submit-button">
+              <span class="submit-text">SEO सामग्री जनरेट करें</span>
+              <div class="loader"></div>
+            </button>
+            <textarea id="video-seo-output" readonly rows="10" placeholder="यहां शीर्षक, विवरण, टैग और वायरल वीडियो लिंक दिखाई देंगे।" 
+                      class="bg-yt-med-grey p-4 rounded-xl shadow-inner border border-yt-grey min-h-[150px] text-sm whitespace-pre-wrap w-full"></textarea>
+          </div>
+
+          <!-- TAB 2: CHANNEL AUDIT -->
+          <div id="channel-audit" class="tab-pane hidden space-y-6 card">
+            <h2 class="text-3xl font-bold text-yt-red">📈 चैनल समीक्षा (Audit)</h2>
+            <input type="text" id="audit-link" placeholder="अपने YouTube चैनल या वीडियो का लिंक पेस्ट करें (उदा: https://youtube.com/@TechChannel)" class="w-full" aria-label="Channel Link Input">
+            <button onclick="handleChannelAudit('audit-output', 'audit-link', 'audit-loader-button')"
+                    id="audit-loader-button"
+                    class="w-full bg-yt-red text-yt-light font-bold py-3 rounded-xl shadow-lg hover:bg-red-700 transition duration-300 flex items-center justify-center relative submit-button">
+              <span class="submit-text">AI से चैनल ऑडिट कराएँ</span>
+              <div class="loader"></div>
+            </button>
+            <textarea id="audit-output" readonly rows="10" placeholder="यहां AI-आधारित समीक्षा, सुधार के सुझाव, और 'क्या कमी है' का विवरण दिखाई देगा।"
+                      class="bg-yt-med-grey p-4 rounded-xl shadow-inner border border-yt-grey min-h-[150px] text-sm whitespace-pre-wrap w-full"></textarea>
+          </div>
+
+          <!-- TAB 3: TRENDING IDEAS -->
+          <div id="trending-ideas" class="tab-pane hidden space-y-6 card">
+            <h2 class="text-3xl font-bold text-yt-red">🔥 ट्रेंडिंग विचार</h2>
+            <input type="text" id="trend-niche" placeholder="अपने चैनल की श्रेणी या Niche डालें (उदा: टेक्नोलॉजी, कुकिंग, फाइनेंस)" class="w-full" aria-label="Niche Input">
+            <button onclick="handleTrendGeneration('trend-output', 'trend-niche', 'trend-loader-button')"
+                    id="trend-loader-button"
+                    class="w-full bg-yt-red text-yt-light font-bold py-3 rounded-xl shadow-lg hover:bg-red-700 transition duration-300 flex items-center justify-center relative submit-button">
+              <span class="submit-text">5 ट्रेंडिंग विचार खोजें</span>
+              <div class="loader"></div>
+            </button>
+            <textarea id="trend-output" readonly rows="10" placeholder="यहां आपके Niche से संबंधित वायरल वीडियो विचार दिखाई देंगे।"
+                      class="bg-yt-med-grey p-4 rounded-xl shadow-inner border border-yt-grey min-h-[150px] text-sm whitespace-pre-wrap w-full"></textarea>
+          </div>
+
+          <!-- TAB 4: SCRIPT / STORY -->
+          <div id="script-story" class="tab-pane hidden space-y-6 card">
+            <h2 class="text-3xl font-bold text-yt-red">✍️ स्क्रिप्ट और स्टोरी</h2>
+            <input type="text" id="script-topic" placeholder="आपके वीडियो का विषय (उदा: इतिहास का सबसे बड़ा रहस्य)" class="w-full" aria-label="Script Topic Input">
+            <select id="script-style" class="w-full bg-yt-dark text-yt-light rounded-md p-3 border border-yt-grey focus:ring-yt-red focus:border-yt-red" aria-label="Script Style Selector">
+              <option value="Informative and Educational">जानकारीपूर्ण और शैक्षिक</option>
+              <option value="Review and Critical Analysis">समीक्षा और गहन विश्लेषण</option>
+              <option value="Storytelling and Historical">कहानी सुनाना और ऐतिहासिक</option>
+              <option value="Step-by-step Tutorial">स्टेप-बाय-स्टेप ट्यूटोरियल</option>
+            </select>
+            <button onclick="handleScriptGeneration('script-output', 'script-topic', 'script-style', 'script-loader-button')"
+                    id="script-loader-button"
+                    class="w-full bg-yt-red text-yt-light font-bold py-3 rounded-xl shadow-lg hover:bg-red-700 transition duration-300 flex items-center justify-center relative submit-button">
+              <span class="submit-text">स्क्रिप्ट जनरेट करें</span>
+              <div class="loader"></div>
+            </button>
+            <textarea id="script-output" readonly rows="10" placeholder="यहां आपकी चुनी हुई शैली में वीडियो स्क्रिप्ट दिखाई देगी।"
+                      class="bg-yt-med-grey p-4 rounded-xl shadow-inner border border-yt-grey min-h-[150px] text-sm whitespace-pre-wrap w-full"></textarea>
+          </div>
+          
+          <!-- TAB 5: THUMBNAIL MAKER -->
+          <div id="thumbnail-maker" class="tab-pane hidden space-y-6 card">
+            <h2 class="text-3xl font-bold text-yt-red">🖼️ थंबनेल मेकर (सिर्फ विचार)</h2>
+            <input type="text" id="thumbnail-topic" placeholder="वीडियो का विषय और मुख्य आकर्षण (उदा: 5 मिनट में 1 लाख कैसे कमाएं)" class="w-full" aria-label="Thumbnail Topic Input">
+            <button onclick="handleThumbnailIdea('thumbnail-output', 'thumbnail-topic', 'thumbnail-loader-button')"
+                    id="thumbnail-loader-button"
+                    class="w-full bg-yt-red text-yt-light font-bold py-3 rounded-xl shadow-lg hover:bg-red-700 transition duration-300 flex items-center justify-center relative submit-button">
+              <span class="submit-text">बेहतरीन थंबनेल विचार जनरेट करें</span>
+              <div class="loader"></div>
+            </button>
+            <textarea id="thumbnail-output" readonly rows="10" placeholder="AI आपको थंबनेल डिज़ाइन के लिए रंग, टेक्स्ट और इमेज के विचार देगा।"
+                      class="bg-yt-med-grey p-4 rounded-xl shadow-inner border border-yt-grey min-h-[150px] text-sm whitespace-pre-wrap w-full"></textarea>
+          </div>
+
+        </div>
+
+      </main>
+    </div>
+
+    <!-- JAVASCRIPT FOR FIREBASE, TABS, AND AI/GEMINI API -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // Firebase Setup and Initialization
+        setLogLevel('debug');
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : null;
+        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+
+        let app, db, auth;
+        let userId = 'anonymous';
+
+        async function setupFirebaseAndAuth() {
+            if (!firebaseConfig) {
+                console.error("Firebase configuration is missing.");
+                return;
+            }
+            try {
+                app = initializeApp(firebaseConfig);
+                db = getFirestore(app);
+                auth = getAuth(app);
+                
+                // Sign in using custom token or anonymously
+                if (initialAuthToken) {
+                    await signInWithCustomToken(auth, initialAuthToken);
+                } else {
+                    await signInAnonymously(auth);
+                }
+
+                onAuthStateChanged(auth, (user) => {
+                    if (user) {
+                        userId = user.uid;
+                        document.getElementById('user-id').textContent = userId;
+                        console.log("Firebase Auth Ready. User ID:", userId);
+                    } else {
+                        userId = 'anonymous';
+                        document.getElementById('user-id').textContent = 'ANONYMOUS';
+                    }
+                });
+
+            } catch (error) {
+                console.error("Firebase initialization failed:", error);
+                document.getElementById('user-id').textContent = 'ERROR';
+            }
+        }
+
+        // --- Tab Switching Logic ---
+        function switchTab(targetTabId) {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabPanes = document.querySelectorAll('.tab-pane');
+
+            tabButtons.forEach(button => {
+                if (button.getAttribute('data-tab') === targetTabId) {
+                    button.classList.add('active');
+                } else {
+                    button.classList.remove('active');
+                }
+            });
+
+            tabPanes.forEach(pane => {
+                pane.classList.add('hidden');
+                if (pane.id === targetTabId) {
+                    pane.classList.remove('hidden');
+                }
+            });
+        }
+
+        // --- AI API Helper Function (The Core Fix) ---
+        const GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=";
+        const apiKey = ""; // Canvas handles the API key
+
+        /**
+         * Generates content using the Gemini API.
+         * @param {string} userPrompt The main user query.
+         * @param {string} systemInstruction Instruction for the AI's role.
+         * @param {string} loaderButtonId The ID of the button containing the loader.
+         * @returns {Promise<string>} The generated text.
+         */
+        async function callGeminiAPI(userPrompt, systemInstruction, loaderButtonId) {
+            const button = document.getElementById(loaderButtonId);
+            
+            // Activate loading state
+            if (button) {
+                button.classList.add('loading');
+                button.disabled = true;
+            }
+
+            const payload = {
+                contents: [{ parts: [{ text: userPrompt }] }],
+                systemInstruction: {
+                    parts: [{ text: systemInstruction }]
+                },
+            };
+
+            try {
+                const response = await fetch(GEMINI_API_URL + apiKey, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await response.json();
+
+                if (!response.ok) {
+                    const errorMessage = result.error?.message || "अज्ञात API त्रुटि हुई।";
+                    console.error("API Error:", errorMessage);
+                    return `**त्रुटि (Error):** AI से प्रतिक्रिया प्राप्त नहीं हुई। (${errorMessage})`;
+                }
+
+                const generatedText = result.candidates?.[0]?.content?.parts?.[0]?.text;
+                
+                return generatedText || "**त्रुटि:** प्रतिक्रिया का प्रारूप सही नहीं है।";
+
+            } catch (error) {
+                console.error("Fetch Error:", error);
+                return `**नेटवर्क त्रुटि:** AI सर्वर से कनेक्ट नहीं हो सका। (${error.message})`;
+            } finally {
+                // Deactivate loading state
+                if (button) {
+                    button.classList.remove('loading');
+                    button.disabled = false;
+                }
+            }
+        }
+
+
+        // --- Specific AI Handler Functions ---
+
+        async function handleVideoOptimization(outputId, topicId, loaderButtonId) {
+            const topicInput = document.getElementById(topicId);
+            const outputArea = document.getElementById(outputId);
+            const topic = topicInput.value.trim();
+
+            if (!topic) {
+                outputArea.value = "कृपया वीडियो का मुख्य विषय दर्ज करें।";
+                return;
+            }
+            outputArea.value = "AI SEO सामग्री जनरेट कर रहा है... कृपया प्रतीक्षा करें।";
+
+            const prompt = `मुझे इस विषय '${topic}' के लिए YouTube वीडियो का 1 आकर्षक शीर्षक, 5 बुलेट पॉइंट में विस्तृत विवरण (Description), और 15 सबसे अच्छे टैग जनरेट करके दो। सभी आउटपुट हिंदी में होना चाहिए और सीधे उपयोग के लिए तैयार होना चाहिए।`;
+            const systemInstruction = "तुम एक विशेषज्ञ YouTube SEO सलाहकार हो। तुम्हारा काम है कि तुम बेहतरीन SEO ऑप्टिमाइज़्ड टेक्स्ट जनरेट करो।";
+
+            const result = await callGeminiAPI(prompt, systemInstruction, loaderButtonId);
+            outputArea.value = result;
+        }
+
+        async function handleChannelAudit(outputId, linkId, loaderButtonId) {
+            const linkInput = document.getElementById(linkId);
+            const outputArea = document.getElementById(outputId);
+            const channelLink = linkInput.value.trim();
+
+            if (!channelLink) {
+                outputArea.value = "कृपया चैनल या वीडियो का लिंक दर्ज करें।";
+                return;
+            }
+            outputArea.value = "AI चैनल की समीक्षा कर रहा है... कृपया प्रतीक्षा करें।";
+
+            const prompt = `इस YouTube लिंक (${channelLink}) का एक संक्षिप्त लेकिन गहन चैनल ऑडिट रिपोर्ट तैयार करो। रिपोर्ट में शामिल होना चाहिए:
+1. चैनल की 2 मुख्य ताकतें (Strengths)
+2. चैनल की 2 मुख्य कमजोरियाँ (Weaknesses)
+3. 3 ऐसे अवसर (Opportunities) जिनका लाभ उठाया जा सकता है।
+4. अगले 3 महीनों के लिए 3 विशिष्ट सुधारों का सुझाव।
+सभी जानकारी हिंदी में प्रदान करें। (ध्यान दें: AI लाइव डेटा नहीं खींच सकता, इसलिए यह एक उच्च गुणवत्ता वाली सिमुलेशन-आधारित रिपोर्ट होनी चाहिए।)`;
+            const systemInstruction = "तुम एक अनुभवी YouTube चैनल रणनीतिकार (Strategist) हो। तुम्हारा काम है कि तुम दिए गए URL के संदर्भ में सर्वश्रेष्ठ सलाह और ऑडिट रिपोर्ट प्रदान करो।";
+
+            const result = await callGeminiAPI(prompt, systemInstruction, loaderButtonId);
+            outputArea.value = result;
+        }
+
+        async function handleTrendGeneration(outputId, nicheId, loaderButtonId) {
+            const nicheInput = document.getElementById(nicheId);
+            const outputArea = document.getElementById(outputId);
+            const niche = nicheInput.value.trim();
+
+            if (!niche) {
+                outputArea.value = "कृपया अपने चैनल की श्रेणी दर्ज करें।";
+                return;
+            }
+            outputArea.value = "AI ट्रेंडिंग विचारों की खोज कर रहा है... कृपया प्रतीक्षा करें।";
+
+            const prompt = `मुझे इस Niche: '${niche}' के लिए 5 ऐसे नए ट्रेंडिंग वीडियो विचार दो जो अभी वायरल हो सकते हैं। हर विचार के लिए एक आकर्षक टाइटल और एक वाक्य में कॉन्सेप्ट समझाओ। सभी जानकारी हिंदी में होनी चाहिए।`;
+            const systemInstruction = "तुम एक विशेषज्ञ ट्रेंड एनालिस्ट हो। तुम्हारा काम है कि तुम YouTube Niche में सबसे नए और वायरल होने वाले टॉपिक्स की पहचान करो।";
+
+            const result = await callGeminiAPI(prompt, systemInstruction, loaderButtonId);
+            outputArea.value = result;
+        }
+
+        async function handleScriptGeneration(outputId, topicId, styleId, loaderButtonId) {
+            const topicInput = document.getElementById(topicId);
+            const styleSelect = document.getElementById(styleId);
+            const outputArea = document.getElementById(outputId);
+            const topic = topicInput.value.trim();
+            const style = styleSelect.value;
+
+            if (!topic) {
+                outputArea.value = "कृपया वीडियो का विषय दर्ज करें।";
+                return;
+            }
+            outputArea.value = `AI '${style}' शैली में स्क्रिप्ट जनरेट कर रहा है... कृपया प्रतीक्षा करें।`;
+
+            const prompt = `इस विषय '${topic}' के लिए लगभग 5 मिनट लंबे वीडियो की स्क्रिप्ट जनरेट करो। स्क्रिप्ट की शैली '${style}' होनी चाहिए। इसमें हुक, मुख्य बॉडी (कम से कम 3 सेक्शन), और कॉल टू एक्शन शामिल होना चाहिए। स्क्रिप्ट पूरी तरह से हिंदी में होनी चाहिए।`;
+            const systemInstruction = "तुम एक पेशेवर स्क्रीनराइटर हो जो YouTube क्रिएटर्स के लिए एंगेजिंग और उच्च-गुणवत्ता वाली स्क्रिप्ट तैयार करता है।";
+
+            const result = await callGeminiAPI(prompt, systemInstruction, loaderButtonId);
+            outputArea.value = result;
+        }
+
+        async function handleThumbnailIdea(outputId, topicId, loaderButtonId) {
+            const topicInput = document.getElementById(topicId);
+            const outputArea = document.getElementById(outputId);
+            const topic = topicInput.value.trim();
+
+            if (!topic) {
+                outputArea.value = "कृपया थंबनेल के लिए वीडियो का विषय दर्ज करें।";
+                return;
+            }
+            outputArea.value = "AI थंबनेल डिज़ाइन के विचार जनरेट कर रहा है... कृपया प्रतीक्षा करें।";
+
+            const prompt = `इस विषय '${topic}' के लिए 3 बेहतरीन थंबनेल डिज़ाइन के विचार दो। हर विचार में ये शामिल होना चाहिए:
+1. मुख्य टेक्स्ट (Headline Text)
+2. प्राथमिक रंग योजना (Primary Color Scheme - जैसे: लाल, काला और सफेद)
+3. इमेज / ग्राफिक तत्व (Image/Graphic Elements - जैसे: चेहरा, तीर, या कोई वस्तु)
+सभी जानकारी हिंदी में प्रदान करें।`;
+            const systemInstruction = "तुम एक विशेषज्ञ YouTube थंबनेल डिज़ाइनर हो जो अधिकतम क्लिक-थ्रू रेट (CTR) के लिए डिज़ाइन बनाता है।";
+
+            const result = await callGeminiAPI(prompt, systemInstruction, loaderButtonId);
+            outputArea.value = result;
+        }
+
+
+        // --- Event Listeners and Initialization ---
+        document.addEventListener('DOMContentLoaded', () => {
+            setupFirebaseAndAuth();
+
+            // Setup Tab Click Listeners
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetTabId = button.getAttribute('data-tab');
+                    switchTab(targetTabId);
+                });
+            });
+
+            // Set initial tab state
+            switchTab('video-seo'); 
+        });
+
+        // Global function exposure (for onclick handlers in HTML)
+        window.handleVideoOptimization = handleVideoOptimization;
+        window.handleChannelAudit = handleChannelAudit;
+        window.handleTrendGeneration = handleTrendGeneration;
+        window.handleScriptGeneration = handleScriptGeneration;
+        window.handleThumbnailIdea = handleThumbnailIdea;
+
+    </script>
+</body>
+</html>
+
+  to { opacity: 1; transform: translateY(0); }
       }
 
       .submit-button {
