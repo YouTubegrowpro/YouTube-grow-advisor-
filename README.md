@@ -1,4 +1,5 @@
- <!DOCTYPE html>
+ ```html
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -105,6 +106,164 @@
         font-size: 0.8rem;
         color: #FFDDDD;
         box-shadow: 0 0 5px rgba(255, 0, 0, 0.2);
+      }
+
+      .hero-section {
+        background: url('https://images.pexels.com/photos/3560363/pexels-photo-3560363.jpeg?auto=compress&cs=tinysrgb&w=1920') no-repeat center center/cover;
+        border-radius: 12px;
+        padding: 4rem;
+        text-align: center;
+        box-shadow: 0 8px 20px rgba(255, 0, 0, 0.3);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero-section h1, .hero-section p, .hero-section button {
+        animation: fadeInUp 1s ease-out;
+      }
+
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      .submit-button {
+        position: relative;
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.4); }
+        70% { box-shadow: 0 0 0 10px rgba(255, 0, 0, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0); }
+      }
+
+      .card {
+        background: #1a1a1a;
+        border-radius: 12px;
+        padding: 2rem;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 20px rgba(255, 0, 0, 0.2);
+      }
+
+      @media (max-width: 640px) {
+        .flex.border-b { flex-direction: column; }
+        .tab-button { width: 100%; font-size: 0.9rem; }
+        .hero-section { padding: 2rem; }
+        .submit-button { padding: 0.75rem; font-size: 0.9rem; }
+      }
+    </style>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YOUR_TRACKING_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-YOUR_TRACKING_ID');
+    </script>
+</head>
+<body>
+    <div class="min-h-screen flex flex-col">
+      <header class="bg-yt-dark sticky top-0 z-50 shadow-lg border-b border-yt-red/50">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+          <div class="flex items-center space-x-2">
+            <svg class="youtube-logo w-6 h-6 fill-yt-red" viewBox="0 0 24 24">
+              <path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.79 16.5c-.21.74-.82 1.35-1.56 1.56C14.88 18.5 12 18.5 12 18.5s-2.88 0-4.23-.44c-.74-.21-1.35-.82-1.56-1.56C6 15.12 6 12 6 12s0-3.12.44-4.23c.21-.74.82-1.35 1.56-1.56C9.12 6 12 6 12 6s2.88 0 4.23.44c.74.21 1.35.82 1.56 1.56C18 8.88 18 12 18 12s0 3.12-.44 4.23zM10 14.5v-5l4 2.5z"/>
+            </svg>
+            <span class="text-xl font-extrabold text-yt-light tracking-tight">YouTube Vistar Salahkar</span>
+          </div>
+          <div class="flex items-center space-x-4">
+            <select id="language-select" class="bg-yt-dark text-yt-light rounded-md p-2 border border-yt-grey text-sm focus:ring-yt-red focus:border-yt-red" aria-label="Select Language">
+              <option value="Hindi">🌐 हिंदी</option>
+              <option value="English">🇬🇧 English</option>
+              <option value="Spanish">🇪🇸 Español</option>
+              <option value="French">🇫🇷 Français</option>
+              <option value="Japanese">🇯🇵 日本語</option>
+            </select>
+            <div class="user-id-box">
+              User ID: <span id="user-id">Loading...</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="hero-section mb-8">
+        <div class="hero-content">
+          <h1 class="text-5xl font-bold text-yt-light mb-4">Skyrocket Your YouTube Channel</h1>
+          <p class="text-xl text-yt-light mb-6">Unleash AI-powered tools for SEO, audits, trending ideas, scripts, and stunning thumbnails!</p>
+          <button class="bg-yt-red text-yt-light font-bold py-3 px-8 rounded-xl hover:bg-red-700 transition duration-300 submit-button" onclick="document.getElementById('video-seo').scrollIntoView()">Start Creating Now</button>
+        </div>
+      </section>
+
+      <main class="flex-grow max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8">
+        <div class="flex border-b border-yt-grey overflow-x-auto whitespace-nowrap mb-8">
+          <button class="tab-button px-6 py-3 text-center text-base font-medium transition duration-300 active" data-tab="video-seo" aria-label="Video SEO Tab">🎬 वीडियो SEO</button>
+          <button class="tab-button px-6 py-3 text-center text-base font-medium transition duration-300" data-tab="channel-audit" aria-label="Channel Audit Tab">📈 चैनल समीक्षा</button>
+          <button class="tab-button px-6 py-3 text-center text-base font-medium transition duration-300" data-tab="trending-ideas" aria-label="Trending Ideas Tab">🔥 ट्रेंडिंग विचार</button>
+          <button class="tab-button px-6 py-3 text-center text-base font-medium transition duration-300" data-tab="script-story" aria-label="Script and Story Tab">✍️ स्क्रिप्ट / स्टोरी</button>
+          <button class="tab-button px-6 py-3 text-center text-base font-medium transition duration-300" data-tab="thumbnail-maker" aria-label="Thumbnail Maker Tab">🖼️ थंबनेल मेकर</button>
+        </div>
+
+        <div class="w-full mb-8 mt-4">
+          <div class="card">
+            <p class="text-xs font-semibold text-gray-400 mb-2 uppercase tracking-wider text-center">Advertisement / प्रायोजक</p>
+            <div id="top-banner-ad" class="w-full bg-yt-dark py-4 rounded-lg flex items-center justify-center min-h-[90px]">
+              <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1234567890123456" crossorigin="anonymous"></script>
+              <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1234567890123456" data-ad-slot="1234567890" data-ad-format="auto"></ins>
+              <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+          </div>
+        </div>
+
+        <div id="tab-content">
+          <div id="video-seo" class="tab-pane active space-y-6 card">
+            <h2 class="text-3xl font-bold text-yt-red">🎬 वीडियो SEO</h2>
+            <input type="text" id="seo-topic" placeholder="आपके वीडियो का मुख्य विषय क्या है? (जैसे: ब्लॉग्गिंग से पैसे कैसे कमाएं)" class="w-full" aria-label="Video Topic Input">
+            <button onclick="handleVideoOptimization('video-seo-output', 'seo-topic')" 
+                    class="w-full bg-yt-red text-yt-light font-bold py-3 rounded-xl shadow-lg hover:bg-red-700 transition duration-300 flex items-center justify-center relative submit-button">
+              <span class="submit-text">SEO सामग्री जनरेट करें</span>
+              <div class="loader" id="seo-loader"></div>
+            </button>
+            <div id="video-seo-output" class="bg-yt-med-grey p-4 rounded-xl shadow-inner border border-yt-grey min-h-[150px] text-sm whitespace-pre-wrap">
+              <p class="text-gray-400">यहां शीर्षक, विवरण, टैग और वायरल वीडियो लिंक दिखाई देंगे।</p>
+            </div>
+          </div>
+
+          <div id="channel-audit" class="tab-pane hidden space-y-6 card">
+            <h2 class="text-3xl font-bold text-yt-red">📈 चैनल समीक्षा (Audit)</h2>
+            <input type="text" id="audit-link" placeholder="अपने YouTube चैनल या वीडियो का लिंक पेस्ट करें (उदा: https://youtube.com/@TechChannel)" class="w-full" aria-label="Channel Link Input">
+            <button onclick="handleChannelAudit('audit-output', 'audit-link')"
+                    class="w-full bg-yt-red text-yt-light font-bold py-3 rounded-xl shadow-lg hover:bg-red-700 transition duration-300 flex items-center justify-center relative submit-button">
+              <span class="submit-text">AI से चैनल ऑडिट कराएँ</span>
+              <div class="loader" id="audit-loader"></div>
+            </button>
+            <div id="audit-output" class="bg-yt-med-grey p-4 rounded-xl shadow-inner border border-yt-grey min-h-[150px] text-sm whitespace-pre-wrap">
+              <p class="text-gray-400">यहां AI-आधारित समीक्षा, सुधार के सुझाव, और 'क्या कमी है' का विवरण दिखाई देगा।</p>
+            </div>
+          </div>
+
+          <div id="trending       box-shadow: 0 0 5px rgba(255, 0, 0, 0.2);
       }
 
       .hero-section {
